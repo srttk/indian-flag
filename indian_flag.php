@@ -27,8 +27,28 @@ imagefilledrectangle($flag, 0, 600, 1350, 900, $green);
 imagefilledellipse($flag, 675, 450, 240, 240, $blue);
 imagefilledellipse($flag, 675, 450, 210, 210, $white);
 
+//Draw the center small circle
+imagefilledellipse($flag, 675, 450, 42, 42, $blue);
 
 
+//Draw 24 small circles in the Ashoka Chakra at the border of the circle adjacent
+// to 24-spoke
+for ($angle = 0; $angle <= 360; $angle = $angle + 15) {
+    $x = 675 + 105 * cos(deg2rad($angle+7.5));
+    $y = 450 + 105 * sin(deg2rad($angle+7.5));
+    imagefilledellipse($flag, $x, $y, 10.5, 10.5, $blue);
+ 
+//Draw the 24 spooks
+    $x1 = 675 + 8 * cos(deg2rad($angle));
+    $y1 = 450 + 8 * sin(deg2rad($angle));
+    $x2 = $x1 + 40 * cos(deg2rad($angle - 5));
+    $y2 = $y1 + 40 * sin(deg2rad($angle - 5));
+    $x3 = 675 + 105 * cos(deg2rad($angle));
+    $y3 = 450 + 105 * sin(deg2rad($angle));
+    $x4 = $x1 + 40 * cos(deg2rad($angle + 5));
+    $y4 = $y1 + 40 * sin(deg2rad($angle + 5));
+    imagefilledpolygon($flag, array($x1, $y1, $x2, $y2, $x3, $y3,$x4,$y4), 4, $blue);
+}
 
 
 
