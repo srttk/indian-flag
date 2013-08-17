@@ -1,7 +1,7 @@
 <?php
 /*
 * @package	:	Indian-flag
-* @Description:	Draw indian flag on page
+* @Description:	Draw indian flag using php
 * @author 	:	Sarath
 * @Created 	:	Aug-15-2013
 */
